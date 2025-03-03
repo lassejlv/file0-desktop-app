@@ -1,0 +1,32 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Capability for the main window",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "opener:default",
+    "http:default",
+    {
+      "identifier": "http:default",
+      "allow": [
+        {
+          "url": "https://file0.io/*"
+        }
+      ]
+    },
+    "fs:default",
+    {
+      "identifier": "core:window:allow-close",
+      "allow": ["**"]
+    },
+    {
+      "identifier": "fs:read-all",
+      "allow": ["**"]
+    },
+    {
+      "identifier": "fs:write-all",
+      "allow": ["**"]
+    }
+  ]
+}
